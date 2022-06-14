@@ -1,0 +1,20 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build",
+      "type": "shell",
+      "command": "clang++",
+      "args": [
+        "main.cpp", "glad.c", "-o", "${workspaceRoot}/main.out",
+        "-I${workspaceRoot}/glfw/include",
+        "-I${workspaceRoot}/learnopengl",
+        "${workspaceRoot}/glfw/libglfw3.a",
+        "-framework", "Cocoa", "-framework", "OpenGL", "-framework", "IOKit", "-framework", "CoreVideo",
+        "-l", "assimp"
+      ]
+    }
+  ]
+}
